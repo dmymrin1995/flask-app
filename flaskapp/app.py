@@ -6,7 +6,7 @@ from io import StringIO
 from flask import Flask
 
 app = Flask(__name__)
-connection = psycopg2.connect('postgresql://postgres:admin@localhost/bank_offices')
+connection = psycopg2.connect('postgresql://postgres:{password}@localhost/bank_offices')
 
 select_city = """select id, office_code, office_name, office_adress from offices where office_adress like (%s)"""
 
